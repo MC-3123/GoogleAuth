@@ -42,19 +42,23 @@ namespace Googleauth
         {
             // Add framework services.
           services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+               options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+          //services.AddDbContext<ApplicationDbContext>(options =>
+         //options.UseSqlServer(Configuration.GetConnectionString("AzureMySql")));
+            
+
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
            services.AddMvc();
-            services.AddMvc(options =>
-            {
-                options.SslPort = 44345;
-                //options.SslPort = 44392;
-                options.Filters.Add(new RequireHttpsAttribute());
-            });
+           // services.AddMvc(options =>
+           // {
+           //     options.SslPort = 44345;
+           //     //options.SslPort = 44392;
+           //     options.Filters.Add(new RequireHttpsAttribute());
+           // });
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
@@ -83,7 +87,7 @@ namespace Googleauth
             app.UseIdentity();
 
             // Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715
-            app.UseGoogleAuthentication(new GoogleOptions()
+          app.UseGoogleAuthentication(new GoogleOptions()
             {
                 ClientId = Configuration["Authentication:Google:ClientId"],
                 ClientSecret = Configuration["Authentication:Google:ClientSecret"]

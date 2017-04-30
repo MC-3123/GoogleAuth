@@ -1,16 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{809CA47F-E5BB-43A8-8847-4C110C52241C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A9286D3E-3303-42EF-ABA8-33F2B7F690E0}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Googleauth", "src\Googleauth\Googleauth.xproj", "{EAB84345-0495-4955-9FFA-7E25D1DF2F35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Googleauth", "src\Googleauth\Googleauth.csproj", "{EAB84345-0495-4955-9FFA-7E25D1DF2F35}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
